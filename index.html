@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebDev</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+
+
+
+<link href="bootstrap/css2/animation.css" rel="stylesheet">  
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+
+
+</head>
+<style type="text/css">
+
+body {background-image: url("webimages/rest4.jpg");
+background-position: center;
+background-repeat: no-repeat;
+color: white;
+font-weight: bold;
+text-transform: capitalize;}
+
+
+#login {color: white;}
+
+
+#first-title {color: #ff4500; font-size: 21px; font-weight: bold;}
+
+
+
+
+</style>
+<body>
+
+
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 id="first-title" >Restaurant Northstreet</h4>
+          
+          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        
+        <strong id="first-title">Restaurant WebPage</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<div class="container"> <!-- first container div  -->
+<div  class="wrap1">    
+<div class="row">
+
+
+</div>
+
+<div class="row">
+<div class="login-form">    
+<div class="col-sm-10 col-md-10 col-lg-10" id="login-form-col">
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+</div> <!-- end of first container div   -->
+<!-- break break break break break break break break break  -->
+<!-- break break break break break break break break break  -->
+<div class="container">
+<div class="row">
+<div class="main-menu">   
+
+<div class="col-sm-12 col-md-12 col-lg-12" id="plates">
+</div>
+
+
+<div class="col-sm-12 col-md-12 col-lg-12" id="main-menu-col">
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+ <li class="nav-item">
+          <button class="btn btn-primary" onclick="loadDocPlates()" id="login">LogIn</button>
+        </li>
+
+</body>
+<script src="bootstrap/js/library.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+        //When the page has loaded.
+        $( document ).ready(function(){
+            //Perform Ajax request.
+            $.ajax({
+                url: 'rest-menus/rest-main-menu.php',
+                type: 'get',
+                success: function(data){
+                    //If the success function is executed,
+                    //then the Ajax request was successful.
+                    //Add the data we received in our Ajax
+                    //request to the "content" div.
+                    $('#main-menu-col').html(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                    $('#main-menu-col').html(errorMsg);
+                  }
+            });
+        });
+        </script> 
+
+
+
+<script>
+function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document. getElementById("login-form-col").innerHTML = xhttp.responseText;
+        }
+    }
+    xhttp.open("GET", "ajax/login-form-ajax-1.php", true);
+    xhttp.send();
+}
+</script>
+
+<script>
+function loadDoc2() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document. getElementById("login-form-col").innerHTML = xhttp.responseText;
+        }
+    }
+    xhttp.open("GET", "ajax/register-form-ajax-1.php", true);
+    xhttp.send();
+}
+</script>  
+
+
+
+ <script>
+        function validate_password() {
+ 
+            var pass = document.getElementById('pass').value;
+            var confirm_pass = document.getElementById('confirm_pass').value;
+            if (pass != confirm_pass) {
+                document.getElementById('wrong_pass_alert').style.color = 'red';
+                document.getElementById('wrong_pass_alert').innerHTML
+                  = '☒ Use same password';
+                document.getElementById('create').disabled = true;
+                document.getElementById('create').style.opacity = (0.4);
+            } else {
+                document.getElementById('wrong_pass_alert').style.color = 'green';
+                document.getElementById('wrong_pass_alert').innerHTML =
+                    '🗹 Password Matched';
+                document.getElementById('create').disabled = false;
+                document.getElementById('create').style.opacity = (1);
+            }
+        }
+ 
+        function wrong_pass_alert() {
+            if (document.getElementById('pass').value != "" &&
+                document.getElementById('confirm_pass').value != "") {
+                alert("Your response is submitted");
+            } else {
+                alert("Please fill all the fields");
+            }
+        }
+    </script>
+
+
+<script>
+function loadDocPlates() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document. getElementById("plates").innerHTML = xhttp.responseText;
+        }
+    }
+    xhttp.open("GET", "plates/plates.php", true);
+    xhttp.send();
+}
+</script> 
+    
