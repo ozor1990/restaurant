@@ -55,7 +55,7 @@ a {all:unset;}
 
 <div id="first-menu-row" class="row">
 <div  id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
-<a href="plates/plates.php">Plates</a>
+<a href="plates/index.html">Plates</a>
 </div>
 <div id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
 sandwiches
