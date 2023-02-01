@@ -46,14 +46,16 @@ letter-spacing: 1em;}
 
 
 #clearing-buttons {all:unset;}
+
+a {all:unset;}
 </style>
 </head>
 
 <body>
 
 <div id="first-menu-row" class="row">
-<div onclick="loadDocPlates()" id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
-Plates
+<div  id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
+<a href="plates/plates.php">Plates</a>
 </div>
 <div id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
 sandwiches
@@ -84,3 +86,4 @@ tobacoos
 
 </body>
 </html>
+
