@@ -111,9 +111,7 @@ left: 40%; right: ; position: fixed;margin:0;}
 </div>
 </div>
 
- <li class="nav-item">
-          <button class="btn btn-primary" onclick="loadDocPlates()" id="login">LogIn</button>
-        </li>
+
 
 
 
@@ -256,12 +254,12 @@ var difference = (end - start) / 1000;
   setTimeout(function(){
 $('#spinners-loadings').fadeIn(1000);
 
-},0);
+},1000);
 
  setTimeout(function(){
-$('#spinners-loadings').fadeOut(10000);
+$('#spinners-loadings').fadeOut(5000);
 
-},5000);  
+},2000);  
 
 
 });
@@ -272,8 +270,8 @@ $('#spinners-loadings').fadeOut(10000);
 <script type="text/javascript">
 $(document).ready(function() {
 setTimeout(function() {
-  $('#main-menu-col').fadeIn();        
-}, 1000);
+  $('#main-menu-col').fadeIn(2500);        
+}, 4000);
 
 });
 </script>
