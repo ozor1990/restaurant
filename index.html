@@ -32,11 +32,11 @@ text-transform: capitalize;}
 #first-title {color: #ff4500; font-size: 21px; font-weight: bold;}
 
 
-
+.spinner-loading {margin-top: 30%;
+left: 40%; right: ; position: fixed;margin:0;}
 
 </style>
 <body>
-
 
 <header>
   <div class="collapse bg-dark" id="navbarHeader">
@@ -114,6 +114,44 @@ text-transform: capitalize;}
  <li class="nav-item">
           <button class="btn btn-primary" onclick="loadDocPlates()" id="login">LogIn</button>
         </li>
+
+
+
+
+
+
+        <!-- starting spinner loading div  -->
+<div class="spinner-loading" id="spinners-loadings" style="display:block;">
+
+<div class="spinner-grow text-primary" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-info" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-light" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-dark" role="status">
+  <span class="sr-only"></span>
+</div>
+
+</div>    
+<!-- finishing spinner loading div  -->
+
+
 
 </body>
 <script src="bootstrap/js/library.js"></script>
@@ -205,6 +243,44 @@ function loadDoc2() {
     </script>
 
 
+
+
+<script  type="module">
+var start = new Date(); 
+
+$(document).ready(function spinner() {
+
+var end = new Date(); 
+var difference = (end - start) * 1000; 
+
+  setTimeout(function(){
+document.getElementById("spinners-loadings").style.display = "none";
+
+},'difference');
+
+alert("document.ready time: " + difference + " seconds");  
+
+});
+
+
+</script>
+
+
  
-    
-    
+
+<script  type="module">
+
+$(document).ready(function spinner() {
+  
+  setTimeout(function(){
+document.getElementById("spinners-loadings").style.display = "none";
+
+},5000);
+
+});
+
+
+</script>
+ 
+
+
