@@ -58,7 +58,7 @@ a {all:unset;}
 <a href="plates/index.html">Plates</a>
 </div>
 <div id="first-menu-div-col" class="col-sm-6 col-md-6 col-lg-6">
-<a href="sandwiches/sandwiches.html">sandwiches</a>
+<a href="sandwiches/index.html">sandwiches</a>
 </div>
 </div>
 
